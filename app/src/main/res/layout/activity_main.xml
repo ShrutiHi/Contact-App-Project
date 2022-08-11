@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/green_light"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:text="CONTACT APP"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/ivResultHappy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:srcCompat="@drawable/happy" />
+
+    <ImageView
+        android:id="@+id/ivResultSad"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/sad" />
+
+    <ImageView
+        android:id="@+id/ivCallIcon"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:srcCompat="@drawable/call" />
+
+    <ImageView
+        android:id="@+id/ivWebIcon"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:srcCompat="@drawable/web" />
+
+    <ImageView
+        android:id="@+id/ivMapIcon"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:srcCompat="@drawable/map" />
+
+    <Button
+        android:id="@+id/btnAddContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Add Contact"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+</LinearLayout>
