@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class AddContact extends AppCompatActivity {
+public class AddContact extends AppCompatActivity implements View.OnClickListener{
     EditText etName, etLocation, etWebsite, etContact;
     ImageView ivHappy, ivSad;
 
@@ -22,43 +22,41 @@ public class AddContact extends AppCompatActivity {
         etContact = findViewById(R.id.etContact);
         etWebsite = findViewById(R.id.etWebsite);
         etLocation = findViewById(R.id.etLocation);
+
         ivHappy = findViewById(R.id.ivHappy);
         ivSad = findViewById(R.id.ivSad);
 
-        ivHappy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(etName.getText().toString().isEmpty() || etContact.getText().toString().isEmpty() || etLocation.getText().toString().isEmpty() || etWebsite.getText().toString().isEmpty()){
-                    Toast.makeText(AddContact.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent intent = new Intent(AddContact.this, com.example.contactappproject.MainActivity.class);
-                    intent.putExtra("contact", etContact.getText().toString());
-                    intent.putExtra("website", etWebsite.getText().toString());
-                    intent.putExtra("location", etLocation.getText().toString());
+        ivHappy.setOnClickListener(this);
+        ivSad.setOnClickListener(this);
+    }
 
-                    setResult(RESULT_OK, intent);
-                    AddContact.this.finish();
-                }
+    @Override
+    public void onClick(View view) {
+        if(etName.getText().toString().isEmpty() || etLocation.getText().toString().isEmpty() ||
+                etWebsite.getText().toString().isEmpty() || etContact.getText().toString().isEmpty()){
+            Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            if(etContact.getText().toString().trim().length()!=10){
+                Toast.makeText(this, "Please enter valid contact", Toast.LENGTH_SHORT).show();
             }
-        });
+            else {
+                Intent intent = new Intent();
+                intent.putExtra("name", etName.getText().toString().trim());
+                intent.putExtra("contact", etContact.getText().toString().trim());
+                intent.putExtra("website", etWebsite.getText().toString().trim());
+                intent.putExtra("location", etLocation.getText().toString().trim());
 
-        ivSad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(etName.getText().toString().isEmpty() || etContact.getText().toString().isEmpty() || etLocation.getText().toString().isEmpty() || etWebsite.getText().toString().isEmpty()){
-                    Toast.makeText(AddContact.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent intent = new Intent(AddContact.this, com.example.contactappproject.MainActivity.class);
-                    intent.putExtra("contact", etContact.getText().toString());
-                    intent.putExtra("website", etWebsite.getText().toString());
-                    intent.putExtra("location", etLocation.getText().toString());
 
-                    setResult(RESULT_CANCELED, intent);
-                    AddContact.this.finish();
+                if (view.getId() == R.id.ivHappy) {
+                    intent.putExtra("mood", "happy");
+                } else {
+                    intent.putExtra("mood", "sad");
                 }
+
+                setResult(RESULT_OK, intent);
+                AddContact.this.finish();
             }
-        });
+        }
     }
 }

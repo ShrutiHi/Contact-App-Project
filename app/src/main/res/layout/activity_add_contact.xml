@@ -19,7 +19,7 @@
         android:gravity="center_horizontal"
         android:hint="Enter your full name"
         android:inputType="textPersonName"
-        android:textSize="28sp" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/etContact"
@@ -33,7 +33,7 @@
         android:hint="Enter your contact"
         android:inputType="phone"
         android:textColor="#000000"
-        android:textSize="28sp" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/etWebsite"
@@ -46,7 +46,7 @@
         android:gravity="center_horizontal"
         android:hint="Enter website"
         android:inputType="textPersonName"
-        android:textSize="28sp" />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/etLocation"
@@ -59,7 +59,7 @@
         android:gravity="center_horizontal"
         android:hint="Enter location"
         android:inputType="textPersonName"
-        android:textSize="28sp" />
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"

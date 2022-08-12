@@ -20,19 +20,12 @@
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/ivResultHappy"
+        android:id="@+id/ivResult"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:clickable="true"
         android:visibility="gone"
         app:srcCompat="@drawable/happy" />
-
-    <ImageView
-        android:id="@+id/ivResultSad"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:visibility="gone"
-        app:srcCompat="@drawable/sad" />
 
     <ImageView
         android:id="@+id/ivCallIcon"
